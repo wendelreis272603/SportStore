@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SportStore</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">SportStore</a>
+                </div>
+                <nav class="nav-menu" id="navMenu">
+                    <a href="index.html">Home</a>
+                    <a href="categorias.html">Categorias</a>
+                    <a href="promocoes.html">Promoções</a>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Buscar produtos..." class="search-input">
+                        <button id="searchBtn" class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="user-actions">
+                        <a href="login.html" class="login-btn" id="loginBtn"><i class="fas fa-user"></i> Entrar</a>
+                        <a href="carrinho.html" class="cart-btn" id="cartBtn">
+                            <i class="fas fa-shopping-cart"></i> <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </div>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Login/Cadastro -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Entrar</button>
+                    <button class="auth-tab" data-tab="signup">Criar Conta</button>
+                </div>
+                
+                <!-- Formulário de Login -->
+                <div class="auth-form active" id="loginForm">
+                    <h2>Entrar na sua conta</h2>
+                    <form id="loginFormElement">
+                        <div class="form-group">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" id="loginEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Senha</label>
+                            <input type="password" id="loginPassword" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Entrar</button>
+                    </form>
+                    <div id="loginMessage" class="auth-message"></div>
+                </div>
+                
+                <!-- Formulário de Cadastro -->
+                <div class="auth-form" id="signupForm">
+                    <h2>Criar nova conta</h2>
+                    <form id="signupFormElement">
+                        <div class="form-group">
+                            <label for="signupName">Nome Completo</label>
+                            <input type="text" id="signupName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupEmail">Email</label>
+                            <input type="email" id="signupEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPassword">Senha</label>
+                            <input type="password" id="signupPassword" required minlength="6">
+                        </div>
+                        <div class="form-group">
+                            <label for="signupConfirmPassword">Confirmar Senha</label>
+                            <input type="password" id="signupConfirmPassword" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Criar Conta</button>
+                    </form>
+                    <div id="signupMessage" class="auth-message"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>SportStore</h3>
+                    <p>Seu destino para roupas esportivas de alta qualidade.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="categorias.html">Categorias</a></li>
+                        <li><a href="promocoes.html">Promoções</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Conta</h4>
+                    <ul>
+                        <li><a href="login.html">Entrar</a></li>
+                        <li><a href="login.html">Criar Conta</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contato</h4>
+                    <p>Email: contato@sportstore.com</p>
+                    <p>Telefone: (11) 9999-9999</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SportStore. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="../js/main.js"></script>
+    <script type="module" src="../js/auth.js"></script>
+    <script type="module" src="../js/carrinho.js"></script>
+</body>
+</html>
+

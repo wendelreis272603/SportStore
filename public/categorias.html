@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias - SportStore</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">SportStore</a>
+                </div>
+                <nav class="nav-menu" id="navMenu">
+                    <a href="index.html">Home</a>
+                    <a href="categorias.html">Categorias</a>
+                    <a href="promocoes.html">Promoções</a>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Buscar produtos..." class="search-input">
+                        <button id="searchBtn" class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="user-actions">
+                        <a href="login.html" class="login-btn" id="loginBtn"><i class="fas fa-user"></i> Entrar</a>
+                        <a href="carrinho.html" class="cart-btn" id="cartBtn">
+                            <i class="fas fa-shopping-cart"></i> <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </div>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Filtros -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-content">
+                <h1 id="categoryTitle">Todos os Produtos</h1>
+                <div class="filters">
+                    <select id="filterPrice" class="filter-select">
+                        <option value="">Todos os Preços</option>
+                        <option value="0-50">Até R$ 50</option>
+                        <option value="50-100">R$ 50 - R$ 100</option>
+                        <option value="100-200">R$ 100 - R$ 200</option>
+                        <option value="200+">Acima de R$ 200</option>
+                    </select>
+                    <select id="filterSize" class="filter-select">
+                        <option value="">Todos os Tamanhos</option>
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                        <option value="GG">GG</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid" id="productsGrid">
+                <!-- Produtos serão inseridos dinamicamente -->
+            </div>
+            <div id="noProducts" class="no-products" style="display: none;">
+                <p>Nenhum produto encontrado.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>SportStore</h3>
+                    <p>Seu destino para roupas esportivas de alta qualidade.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="categorias.html">Categorias</a></li>
+                        <li><a href="promocoes.html">Promoções</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Conta</h4>
+                    <ul>
+                        <li><a href="login.html">Entrar</a></li>
+                        <li><a href="login.html">Criar Conta</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contato</h4>
+                    <p>Email: contato@sportstore.com</p>
+                    <p>Telefone: (11) 9999-9999</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SportStore. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="../js/main.js"></script>
+    <script type="module" src="../js/carrinho.js"></script>
+    <script type="module">
+        import { produtos } from '../js/dados.js';
+        import { renderProducts } from '../js/main.js';
+        
+        // Obter categoria da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const categoria = urlParams.get('categoria');
+        
+        // Filtrar produtos por categoria
+        let produtosFiltrados = categoria 
+            ? produtos.filter(p => p.categoria.toLowerCase() === categoria.toLowerCase())
+            : produtos;
+        
+        // Atualizar título
+        const categoryTitle = document.getElementById('categoryTitle');
+        if (categoria) {
+            const categoriaCapitalizada = categoria.charAt(0).toUpperCase() + categoria.slice(1);
+            categoryTitle.textContent = categoriaCapitalizada;
+        }
+        
+        // Renderizar produtos
+        renderProducts(produtosFiltrados, 'productsGrid');
+        
+        // Aplicar filtros
+        const filterPrice = document.getElementById('filterPrice');
+        const filterSize = document.getElementById('filterSize');
+        
+        function applyFilters() {
+            let filtered = categoria 
+                ? produtos.filter(p => p.categoria.toLowerCase() === categoria.toLowerCase())
+                : produtos;
+            
+            const priceFilter = filterPrice.value;
+            if (priceFilter) {
+                if (priceFilter === '0-50') {
+                    filtered = filtered.filter(p => p.preco <= 50);
+                } else if (priceFilter === '50-100') {
+                    filtered = filtered.filter(p => p.preco > 50 && p.preco <= 100);
+                } else if (priceFilter === '100-200') {
+                    filtered = filtered.filter(p => p.preco > 100 && p.preco <= 200);
+                } else if (priceFilter === '200+') {
+                    filtered = filtered.filter(p => p.preco > 200);
+                }
+            }
+            
+            const sizeFilter = filterSize.value;
+            if (sizeFilter) {
+                filtered = filtered.filter(p => p.tamanhos && p.tamanhos.includes(sizeFilter));
+            }
+            
+            renderProducts(filtered, 'productsGrid');
+            document.getElementById('noProducts').style.display = filtered.length === 0 ? 'block' : 'none';
+        }
+        
+        filterPrice.addEventListener('change', applyFilters);
+        filterSize.addEventListener('change', applyFilters);
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportStore - Roupas Esportivas</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">SportStore</a>
+                </div>
+                <nav class="nav-menu" id="navMenu">
+                    <a href="index.html">Home</a>
+                    <a href="categorias.html">Categorias</a>
+                    <a href="promocoes.html">Promoções</a>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Buscar produtos..." class="search-input">
+                        <button id="searchBtn" class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="user-actions">
+                        <a href="login.html" class="login-btn" id="loginBtn"><i class="fas fa-user"></i> Entrar</a>
+                        <a href="carrinho.html" class="cart-btn" id="cartBtn">
+                            <i class="fas fa-shopping-cart"></i> <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </div>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="hero-banner">
+        <div class="banner-content">
+            <div class="banner-badge"><i class="fas fa-fire"></i> NOVA COLEÇÃO</div>
+            <h1>Atitude Esportiva <i class="fas fa-trophy"></i></h1>
+            <p>Equipamentos de alta performance para seu treino</p>
+            <a href="categorias.html" class="btn-primary"><i class="fas fa-arrow-right"></i> Explorar Produtos</a>
+        </div>
+    </section>
+
+    <!-- Categorias -->
+    <section class="categories-section">
+        <div class="container">
+            <h2 class="section-title">Categorias</h2>
+            <div class="categories-grid" id="categoriesGrid">
+                <a href="categorias.html?categoria=camisas" class="category-card">
+                    <div class="category-icon"><i class="fas fa-tshirt"></i></div>
+                    <h3>Camisas <i class="fas fa-star"></i></h3>
+                </a>
+                <a href="categorias.html?categoria=shorts" class="category-card">
+                    <div class="category-icon"><i class="fas fa-running"></i></div>
+                    <h3>Shorts</h3>
+                </a>
+                <a href="categorias.html?categoria=meias" class="category-card">
+                    <div class="category-icon"><i class="fas fa-socks"></i></div>
+                    <h3>Meias</h3>
+                </a>
+                <a href="categorias.html?categoria=tenis" class="category-card">
+                    <div class="category-icon"><i class="fas fa-shoe-prints"></i></div>
+                    <h3>Tênis <i class="fas fa-fire"></i></h3>
+                </a>
+                <a href="categorias.html?categoria=bones" class="category-card">
+                    <div class="category-icon"><i class="fas fa-hat-cowboy"></i></div>
+                    <h3>Bonés</h3>
+                </a>
+                <a href="categorias.html?categoria=faixas" class="category-card">
+                    <div class="category-icon"><i class="fas fa-headband"></i></div>
+                    <h3>Faixas</h3>
+                </a>
+                <a href="categorias.html?categoria=jaquetas" class="category-card">
+                    <div class="category-icon"><i class="fas fa-vest"></i></div>
+                    <h3>Jaquetas <i class="fas fa-bolt"></i></h3>
+                </a>
+                <a href="categorias.html?categoria=casacos" class="category-card">
+                    <div class="category-icon"><i class="fas fa-jacket"></i></div>
+                    <h3>Casacos</h3>
+                </a>
+                <a href="categorias.html?categoria=moletons" class="category-card">
+                    <div class="category-icon"><i class="fas fa-tshirt"></i></div>
+                    <h3>Moletons</h3>
+                </a>
+                <a href="categorias.html?categoria=toucas" class="category-card">
+                    <div class="category-icon"><i class="fas fa-hat-winter"></i></div>
+                    <h3>Toucas</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promoções -->
+    <section class="promotions-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-fire"></i> Promoções Especiais <i class="fas fa-bolt"></i></h2>
+                <a href="promocoes.html" class="view-all">Ver todas <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="products-grid" id="promotionsGrid">
+                <!-- Produtos serão inseridos dinamicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Mais Vendidos -->
+    <section class="bestsellers-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-trophy"></i> Mais Vendidos <i class="fas fa-star"></i></h2>
+            <div class="products-grid" id="bestsellersGrid">
+                <!-- Produtos serão inseridos dinamicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>SportStore</h3>
+                    <p>Seu destino para roupas esportivas de alta qualidade.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="categorias.html">Categorias</a></li>
+                        <li><a href="promocoes.html">Promoções</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Conta</h4>
+                    <ul>
+                        <li><a href="login.html">Entrar</a></li>
+                        <li><a href="login.html">Criar Conta</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contato</h4>
+                    <p>Email: contato@sportstore.com</p>
+                    <p>Telefone: (11) 9999-9999</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SportStore. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="../js/main.js"></script>
+    <script type="module" src="../js/carrinho.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - SportStore</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">SportStore</a>
+                </div>
+                <nav class="nav-menu" id="navMenu">
+                    <a href="index.html">Home</a>
+                    <a href="categorias.html">Categorias</a>
+                    <a href="promocoes.html">Promoções</a>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Buscar produtos..." class="search-input">
+                        <button id="searchBtn" class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="user-actions">
+                        <a href="login.html" class="login-btn" id="loginBtn"><i class="fas fa-user"></i> Entrar</a>
+                        <a href="carrinho.html" class="cart-btn" id="cartBtn">
+                            <i class="fas fa-shopping-cart"></i> <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </div>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Carrinho -->
+    <section class="cart-section">
+        <div class="container">
+            <h1>Meu Carrinho</h1>
+            <div class="cart-content">
+                <div class="cart-items" id="cartItems">
+                    <!-- Itens serão inseridos dinamicamente -->
+                </div>
+                <div class="cart-summary" id="cartSummary">
+                    <h3>Resumo do Pedido</h3>
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">R$ 0,00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Frete:</span>
+                        <span id="frete">R$ 0,00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="total">R$ 0,00</span>
+                    </div>
+                    <button class="btn-primary btn-checkout" id="checkoutBtn">Finalizar Compra</button>
+                    <a href="index.html" class="continue-shopping">Continuar Comprando</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>SportStore</h3>
+                    <p>Seu destino para roupas esportivas de alta qualidade.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="categorias.html">Categorias</a></li>
+                        <li><a href="promocoes.html">Promoções</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Conta</h4>
+                    <ul>
+                        <li><a href="login.html">Entrar</a></li>
+                        <li><a href="login.html">Criar Conta</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contato</h4>
+                    <p>Email: contato@sportstore.com</p>
+                    <p>Telefone: (11) 9999-9999</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SportStore. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="../js/main.js"></script>
+    <script type="module" src="../js/carrinho.js"></script>
+</body>
+</html>
+
